@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Cards({ card }) {
 
   const [quantity, setQuantity] = useState(card.quantity);
+
+
 
   return (
     <>
