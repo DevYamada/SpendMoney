@@ -1,31 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import infos from "../../public/infos.json";
+import { MoneyContext } from "./MoneyProvider";
 
-export class Cardscl {
-    constructor(money){
-        this.money = money
-    }}
+function moneyDisp(money){
+    localStorage.setItem("money", money)
+}
 
 function Cards({ card }) {
   const [quantity, setQuantity] = useState(card.quantity);
   const [minusmore, setMinusmore] = useState(2);
-    Cardscl.money = 1
+  const { money, updateMoney } = useContext(MoneyContext);
+
   useEffect(() => {
     if (localStorage.getItem("money") == null) {
-      localStorage.setItem("money", 300000000000);
+      updateMoney(300000000000)
     } else {
+        const currentMoney = Number(localStorage.getItem("money"));
       if (minusmore == 0) {
-        localStorage.setItem(
-          "money",
-          localStorage.getItem("money") + card.price
-        );
+        updateMoney(currentMoney + card.price);
         setMinusmore(2)
         console.log(localStorage.getItem("money"))
       } else if (minusmore == 1) {
-        localStorage.setItem(
-          "money",
-          localStorage.getItem("money") - card.price
-        );
+        updateMoney(currentMoney - card.price);
+          infos[0] = ''
         setMinusmore(2)
       }
     }

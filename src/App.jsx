@@ -6,6 +6,7 @@ import Money from "./components/Money";
 function App() {
   return (
     <>
+    <input type="button" value="Reset" className="btn btn-success" onClick={(e) => {localStorage.setItem('money', 300000000000)}} />
       <Home />
     </>
   );

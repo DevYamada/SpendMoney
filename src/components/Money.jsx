@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import infos from "../../public/infos.json";
+import { MoneyContext } from "./MoneyProvider";
 
 function Money() {
-  const [money, setMoney] = useState(
-    localStorage.getItem("money") || "300000000000"
-  );
-
-  useEffect(() => {
-    setMoney(localStorage.getItem("money", money) || "300000000000");
-    console.log(1);
-  }, [localStorage.getItem("money")]);
+    const { money } = useContext(MoneyContext);
 
   return (
     <>
