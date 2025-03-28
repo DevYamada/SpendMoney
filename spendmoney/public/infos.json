@@ -1,0 +1,8 @@
+[
+    {"id": 1, "product": "Iphone 16", "price": 8000, "quantity": 0, "url": "https://www.goimports.com.br/image/catalog/0%20novos%20produtos%202024/iphone16/iphone-16-finish-select-202409-6-7inch-black.png"},
+    {"id": 2, "product": "Helicoptero", "price": 2600000, "quantity": 0, "url": "https://img.pikbest.com/png-images/20240524/modern-private-helicopter-png_10582300.png!sw800"},
+    {"id": 3, "product": "Big Mac", "price": 30, "quantity": 0, "url": "https://png.pngtree.com/png-vector/20240914/ourmid/pngtree-beef-big-mac-no-dig-material-png-image_13572474.png"},
+    {"id": 4, "product": "Mansão", "price": 10000000, "quantity": 0, "url": ""},
+    {"id": 5, "product": "Arranha-ceu", "price": 2400000000, "quantity": 0, "url": ""},
+    {"id": 6, "product": "TV", "price": 4000, "quantity": 0, "url": ""}
+]
