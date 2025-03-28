@@ -1,4 +1,5 @@
 import Cards from "./Cards";
+import Money from "./Money";
 import infos from "../../public/infos.json";
 import { useState, useEffect } from "react";
 
@@ -21,6 +22,7 @@ function Home() {
   } else {
     return (
       <>
+        <Money />
         <div className="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
           {infosC.map((cards) => (
             <Cards card={cards} key={cards.id} />

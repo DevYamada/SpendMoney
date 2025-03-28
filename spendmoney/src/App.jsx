@@ -6,7 +6,6 @@ import Money from "./components/Money";
 function App() {
   return (
     <>
-      <Money />
       <Home />
     </>
   );

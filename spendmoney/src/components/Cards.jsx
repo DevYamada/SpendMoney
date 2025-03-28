@@ -1,10 +1,35 @@
 import { useState, useEffect } from "react";
+import infos from "../../public/infos.json";
+
+export class Cardscl {
+    constructor(money){
+        this.money = money
+    }}
 
 function Cards({ card }) {
-
   const [quantity, setQuantity] = useState(card.quantity);
-
-
+  const [minusmore, setMinusmore] = useState(2);
+    Cardscl.money = 1
+  useEffect(() => {
+    if (localStorage.getItem("money") == null) {
+      localStorage.setItem("money", 300000000000);
+    } else {
+      if (minusmore == 0) {
+        localStorage.setItem(
+          "money",
+          localStorage.getItem("money") + card.price
+        );
+        setMinusmore(2)
+        console.log(localStorage.getItem("money"))
+      } else if (minusmore == 1) {
+        localStorage.setItem(
+          "money",
+          localStorage.getItem("money") - card.price
+        );
+        setMinusmore(2)
+      }
+    }
+  }, [quantity]);
 
   return (
     <>
@@ -27,7 +52,12 @@ function Cards({ card }) {
               value="-"
               className="btn btn-danger"
               onClick={(e) => {
-                setQuantity(quantity - 1);
+                if (quantity <= 0) {
+                  alert("Quantidade não pode ser menor que 0");
+                } else {
+                  setMinusmore(0);
+                  setQuantity(quantity - 1);
+                }
               }}
             />
             <input
@@ -37,7 +67,7 @@ function Cards({ card }) {
               id=""
               placeholder={quantity}
               value={quantity}
-              min=""
+              min="0"
               max="100"
               onChange={(e) => {
                 setQuantity(Number(e.target.value));
@@ -48,6 +78,7 @@ function Cards({ card }) {
               value="+"
               className="btn btn-success"
               onClick={(e) => {
+                setMinusmore(1);
                 setQuantity(quantity + 1);
               }}
             />
