@@ -3,6 +3,7 @@
   margin: 0 auto;
   word-wrap: break-word;
   text-align: center;
+  overflow-x: hidden;
 }
 
 
@@ -12,8 +13,13 @@ body{
   overflow-x: hidden;
 }
 
+.row {
+
+}
+
 .card {
   margin: 6px;
+
 
 }
 
