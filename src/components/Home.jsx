@@ -19,17 +19,21 @@ function Home() {
   }, [infos]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    );
   } else {
     return (
       <MoneyProvider>
         <Money />
         <div className="d-flex justify-content-center">
-        <div className="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
-          {infosC.map((cards) => (
-            <Cards card={cards} key={cards.id} />
-          ))}
-        </div>
+          <div className="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
+            {infosC.map((cards) => (
+              <Cards card={cards} key={cards.id} />
+            ))}
+          </div>
         </div>
       </MoneyProvider>
     );

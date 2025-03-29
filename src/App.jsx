@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       <Home />
+      <footer style={{fontFamily: "sans-serif", marginTop: "20px", marginBottom: "30px"}}>© Lucas Yamada</footer>
     </>
   );
 }
