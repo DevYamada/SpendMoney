@@ -31,8 +31,10 @@ function Cards({ card }) {
 
   return (
     <>
-      <div className="card mb-3 col" style={{ maxWidth: "19rem" }}>
-        <img src={card.url} className="card-img-top" alt="..." />
+      <div className="card col cardcard" style={{ maxWidth: "19rem" }}>
+        <div className="d-flex justify-content-center align-items-center card-img-top-div">
+          <img src={card.url} className="card-img-top" alt="..." />
+        </div>
         <div className="card-body col">
           <h5 className="card-title">{card.product}</h5>
           <p className="card-text">
@@ -100,7 +102,6 @@ function Cards({ card }) {
           </small>
         </div>
       </div>
-      {console.log(card.product)}
     </>
   );
 }
