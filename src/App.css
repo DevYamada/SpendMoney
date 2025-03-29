@@ -18,6 +18,12 @@ body {
   box-shadow: 0px 0px 5px rgba(10, 10, 10, 0.1);
 }
 
+.card-text {
+  color: rgb(5, 174, 5);
+  font-weight: 600;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .moneyD {
   display: grid;
   justify-content: center;
