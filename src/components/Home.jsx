@@ -21,7 +21,6 @@ function Home() {
   if (loading) {
     return <p>Loading...</p>;
   } else {
-    let money = 1010010001
     return (
       <MoneyProvider>
         <Money />

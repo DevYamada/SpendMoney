@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import infos from "../../public/infos.json";
+import React, { _useState, _useEffect, useContext } from "react";
+import _infos from "../../public/infos.json";
 import { MoneyContext } from "./MoneyProvider";
 
 function Money() {
@@ -13,7 +13,9 @@ function Money() {
           src="https://i.ibb.co/35q8y5Y4/eu3131.jpg"
           alt=""
         />
-        <h2 style={{wordWrap: "break-word"}}>Gaste o Dinheiro do Futuro Yamada</h2>
+        <h2 style={{ wordWrap: "break-word" }}>
+          Gaste o Dinheiro do Futuro Yamada
+        </h2>
       </div>
       <div className="sticky-top moneySD">
         <h1 className="moneyH">

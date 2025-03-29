@@ -1,16 +1,13 @@
 import { useState, useEffect, useContext } from "react";
-import infos from "../../public/infos.json";
+import _infos from "../../public/infos.json";
 import { MoneyContext } from "./MoneyProvider";
 
-function moneyDisp(money) {
-  localStorage.setItem("money", money);
-}
 
 function Cards({ card }) {
   const [quantity, setQuantity] = useState(card.quantity);
   const [minusmore, setMinusmore] = useState(2);
   const { money, updateMoney } = useContext(MoneyContext);
-  const [valueT, setValue] = useState('');
+  const [valueT, setValue] = useState("");
 
   useEffect(() => {
     if (money == null) {
@@ -48,7 +45,7 @@ function Cards({ card }) {
               type="button"
               value="-"
               className="btn btn-danger"
-              onClick={(e) => {
+              onClick={() => {
                 if (quantity <= 0) {
                   alert("Quantidade não pode ser menor que 0");
                 } else {
@@ -67,7 +64,6 @@ function Cards({ card }) {
               min="0"
               max="100"
               onChange={(e) => {
-                console.log("11111" + e.target.type);
                 if (
                   e.target.value < 0 ||
                   e.target.type != "number" ||
@@ -79,7 +75,11 @@ function Cards({ card }) {
                     if (e.target.value < valueT) {
                       updateMoney(money + card.price * Number(valueT));
                     } else if (e.target.value > valueT) {
-                      updateMoney(money + card.price * Number(valueT) - card.price * Number(e.target.value));
+                      updateMoney(
+                        money +
+                          card.price * Number(valueT) -
+                          card.price * Number(e.target.value)
+                      );
                     }
                     setValue(e.target.value);
                     setQuantity(Number(e.target.value));
@@ -91,7 +91,7 @@ function Cards({ card }) {
               type="button"
               value="+"
               className="btn btn-success"
-              onClick={(e) => {
+              onClick={() => {
                 setMinusmore(1);
                 setQuantity(quantity + 1);
               }}

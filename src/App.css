@@ -3,29 +3,23 @@
   margin: 0 auto;
   word-wrap: break-word;
   text-align: center;
-
 }
 
-
-
-body{
+body {
   background-color: rgb(240, 240, 240);
-
 }
 
 .row {
   max-width: 90vw;
 }
 
-
-
 .card {
   margin: 6px;
   box-shadow: 0px 0px 5px rgba(10, 10, 10, 0.1);
 }
 
-.moneyD{
-  display:grid;
+.moneyD {
+  display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -36,19 +30,14 @@ body{
   align-items: center;
   margin: 0 auto;
   max-width: 935px;
-
 }
 
-input[type="button"]{
+input[type="button"] {
   width: 2.5rem;
 }
 
-.moneyProfile{
-
+.moneyProfile {
   border-radius: 0;
-}
-
-.col {
 }
 
 .quantity {
@@ -59,7 +48,7 @@ input[type="button"]{
   appearance: none;
 }
 
-h1{
+h1 {
   margin-bottom: 4rem;
 }
 
@@ -76,7 +65,6 @@ h1{
   width: 100%;
   margin-bottom: 40px;
   border-radius: 0px 0px 6px 6px;
-
 }
 
 .card-img-top {
@@ -87,7 +75,6 @@ h1{
 }
 
 .img-profile {
-
   margin-top: 30px;
   width: 135px;
   height: 135px;
@@ -95,6 +82,6 @@ h1{
   margin-bottom: 15px;
 }
 
-.card-img-top-div{
+.card-img-top-div {
   height: 7.8rem;
 }
