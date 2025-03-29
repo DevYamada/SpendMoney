@@ -10,16 +10,15 @@
 
 body{
   background-color: rgb(240, 240, 240);
-  overflow-x: hidden;
+
 }
 
 .row {
-
+  max-width: 90vw;
 }
 
 .card {
   margin: 6px;
-
 
 }
 
@@ -52,7 +51,6 @@ input[type="button"]{
 
 .quantity {
   text-align: center;
-
   width: 3.3rem;
 }
 .quantity::-webkit-inner-spin-button {
@@ -80,7 +78,6 @@ h1{
 }
 
 .card-img-top {
-
   margin: 0 auto;
   max-width: 8.5rem;
   padding: 0.6rem;
