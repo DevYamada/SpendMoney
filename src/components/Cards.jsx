@@ -2,38 +2,36 @@ import { useState, useEffect, useContext } from "react";
 import infos from "../../public/infos.json";
 import { MoneyContext } from "./MoneyProvider";
 
-function moneyDisp(money){
-    localStorage.setItem("money", money)
+function moneyDisp(money) {
+  localStorage.setItem("money", money);
 }
 
 function Cards({ card }) {
   const [quantity, setQuantity] = useState(card.quantity);
   const [minusmore, setMinusmore] = useState(2);
   const { money, updateMoney } = useContext(MoneyContext);
+  const [valueT, setValue] = useState('');
 
   useEffect(() => {
-    if (localStorage.getItem("money") == null) {
-      updateMoney(300000000000)
+    if (money == null) {
+      updateMoney(350000000000);
     } else {
-        const currentMoney = Number(localStorage.getItem("money"));
+      const currentMoney = money;
       if (minusmore == 0) {
         updateMoney(currentMoney + card.price);
-        setMinusmore(2)
-        console.log(localStorage.getItem("money"))
+        setValue(Number(valueT) - 1);
+        setMinusmore(2);
       } else if (minusmore == 1) {
         updateMoney(currentMoney - card.price);
-          infos[0] = ''
-        setMinusmore(2)
+        setValue(Number(valueT) + 1);
+        setMinusmore(2);
       }
     }
   }, [quantity]);
 
   return (
     <>
-      <div
-        className="card border-success mb-3 col"
-        style={{ maxWidth: "19rem" }}
-      >
+      <div className="card mb-3 col" style={{ maxWidth: "19rem" }}>
         <img src={card.url} className="card-img-top" alt="..." />
         <div className="card-body col">
           <h5 className="card-title">{card.product}</h5>
@@ -63,11 +61,28 @@ function Cards({ card }) {
               name=""
               id=""
               placeholder={quantity}
-              value={quantity}
+              value={valueT}
               min="0"
               max="100"
               onChange={(e) => {
-                setQuantity(Number(e.target.value));
+                console.log("11111" + e.target.type);
+                if (
+                  e.target.value < 0 ||
+                  e.target.type != "number" ||
+                  e.target.value > 100
+                ) {
+                  alert("Quantidade inválida!");
+                } else {
+                  if (e.target.value != valueT) {
+                    if (e.target.value < valueT) {
+                      updateMoney(money + card.price * Number(valueT));
+                    } else if (e.target.value > valueT) {
+                      updateMoney(money + card.price * Number(valueT) - card.price * Number(e.target.value));
+                    }
+                    setValue(e.target.value);
+                    setQuantity(Number(e.target.value));
+                  }
+                }
               }}
             />
             <input

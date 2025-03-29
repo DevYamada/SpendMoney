@@ -1,13 +1,44 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   word-wrap: break-word;
   text-align: center;
 }
 
+
+
+body{
+  background-color: rgb(240, 240, 240);
+
+}
+
 .card {
-  margin: 10px;
+  margin: 6px;
+
+}
+
+.moneyD{
+  display:grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.moneySD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 935px;
+
+}
+
+input[type="button"]{
+  width: 2.5rem;
+}
+
+.moneyProfile{
+
+  border-radius: 0;
 }
 
 .col {
@@ -26,10 +57,35 @@ h1{
   margin-bottom: 4rem;
 }
 
+.moneyH {
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: linear-gradient(green, rgb(97, 174, 97));
+  box-shadow: 0px 10px 30px rgba(10, 10, 10, 0.5);
+  height: 5rem;
+  text-align: center;
+  width: 100%;
+
+  margin-bottom: 40px;
+
+}
+
 .card-img-top {
 
   margin: 0 auto;
   max-width: 8.5rem;
   padding: 0.6rem;
   padding-bottom: 0;
+}
+
+.img-profile {
+
+  margin-top: 30px;
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
